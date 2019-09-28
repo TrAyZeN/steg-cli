@@ -74,14 +74,14 @@ public class Arguments {
                                     try {
                                         Integer.parseInt(shift);
                                     } catch (NumberFormatException e) {
-                                        System.out.println("Cipher parameter error : '" + shift + "' is not an integer. Use 'steg -h cipher' for more informations.");
+                                        System.out.println("Cipher parameter error : '" + shift + "' is not an integer. Use 'steg -h cipher' for more information.");
                                         System.exit(1);
                                     } finally {
                                         parameters.add(shift);
                                         arguments.put("cipher", new ArgumentParameter(cipherMethod, parameters));
                                     }
                                 } else {
-                                    System.out.println("Missing parameter for caesar cipher. Use 'steg -h cipher' for more informations.");
+                                    System.out.println("Missing parameter for caesar cipher. Use 'steg -h cipher' for more information.");
                                     System.exit(1);
                                 }
                                 break;
@@ -89,7 +89,7 @@ public class Arguments {
                                 arguments.put("cipher", new ArgumentParameter(cipherMethod));
                                 break;
                             default:
-                                System.out.println("Unknown cipher method '" + cipherMethod + "' use 'steg -h cipher' for more informations.");
+                                System.out.println("Unknown cipher method '" + cipherMethod + "' use 'steg -h cipher' for more information.");
                                 System.exit(1);
                                 break;
                         }
@@ -103,7 +103,7 @@ public class Arguments {
                     break;
                 default:
                     if (argsList.get(i).startsWith("-")) {
-                        System.out.println("Unknown argument '" + argsList.get(i) + "' use 'steg -h' for more informations.");
+                        System.out.println("Unknown argument '" + argsList.get(i) + "' use 'steg -h' for more information.");
                         System.exit(1);
                     }
                     break;
@@ -134,7 +134,7 @@ public class Arguments {
                 }
             }
         } else if (!this.contains("help")) {
-            System.out.println("Unknown command provided, use 'steg -h' for more informations on how to use this program.");
+            System.out.println("Unknown command provided, use 'steg -h' for more information on how to use this program.");
             System.exit(1);
         }
     }
