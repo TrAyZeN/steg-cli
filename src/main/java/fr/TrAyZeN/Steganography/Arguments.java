@@ -143,13 +143,13 @@ public class Arguments {
         File tempFile = new File(this.valueOf("input"));
 
         if (!tempFile.exists()) {
-            System.out.println("Input file does not exists");
+            System.out.println("Input file '" + this.valueOf("input") + "' does not exists.");
             System.exit(1);
         }
     }
 
     private void validateOutputFolder() {
-        String parts[] = this.valueOf("output").split("/");
+        String parts[] = this.valueOf("output").replace("\\", "/").split("/");
         StringBuilder folderBuilder = new StringBuilder();
         for (int i = 0; i < parts.length - 1; i++) {
             folderBuilder.append(parts[i] + "/");
@@ -157,7 +157,7 @@ public class Arguments {
 
         File tempFolder = new File(folderBuilder.toString());
         if (!tempFolder.exists()) {
-            System.out.println("Output folder does not exists");
+            System.out.println("Output folder '" + folderBuilder.toString() + "' does not exists.");
             System.exit(1);
         }
     }
