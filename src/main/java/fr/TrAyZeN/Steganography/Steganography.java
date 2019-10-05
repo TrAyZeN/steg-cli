@@ -32,10 +32,10 @@ public class Steganography {
         if (arguments.contains("cipher")) {
             message = Cipher.cipher(message, arguments.valueOf("cipher"), arguments.optionsOf("cipher"));
         }
-        System.out.println(message);
         image.encode(message, Short.parseShort(arguments.valueOf("nb")));
 
         image.save(arguments.valueOf("output"));
+        System.out.println("Successfully encoded the following message in '" + arguments.valueOf("output") + "':\n" + message);
     }
 
     private static void decode(Arguments arguments) {
@@ -46,7 +46,7 @@ public class Steganography {
             message = Decipher.decipher(message, arguments.valueOf("cipher"), arguments.optionsOf("cipher"));
         }
 
-        System.out.println("message " + message);
+        System.out.println("Decoded message:\n" + message);
     }
 
     private static void printHelp() {
