@@ -50,33 +50,33 @@ public class Steganography {
     }
 
     private static void printHelp() {
-        System.out.println("Usage: steg [command] [arguments]\n"
+        System.out.println("Usage: steg-cli [command] [arguments]\n"
                          + "\n"
                          + "Commands:\n"
-                         + "encode                             Hide a given message in a given image.\n"
-                         + "decode                             Get the hidden message in a given image.\n"
+                         + "  encode                             Hide a given message in a given image.\n"
+                         + "  decode                             Get the hidden message in a given image.\n"
                          + "\n"
                          + "Encoding mandatory arguments:\n"
-                         + "-m, --message <message>            The message to hide in the image.\n"
-                         + "-i, --input <path>                 The path of the input image.\n"
-                         + "-o, --output <path>                The path of the resulting image.\n"
+                         + "  -m, --message <message>            The message to hide in the image.\n"
+                         + "  -i, --input <path>                 The path of the input image.\n"
+                         + "  -o, --output <path>                The path of the resulting image.\n"
                          + "Encoding optional arguments:\n"
-                         + "-c, --cipher <method> <parameters> Cipher to apply to the message. Use 'steg -h cipher' to get more information on available cipher.\n"
+                         + "  -c, --cipher <method> <parameters> Cipher to apply to the message. Use 'steg-cli -h cipher' to get more information on available cipher.\n"
                          + "\n"
                          + "Decoding mandatory arguments:\n"
-                         + "-i, --input <path>                 The path of the input image.\n"
+                         + "  -i, --input <path>                 The path of the input image.\n"
                          + "Encoding optional arguments:\n"
-                         + "-c, --cipher <method> <parameters> Decipher the message. Use 'steg -h cipher' to get more information on available cipher.\n"
+                         + "  -c, --cipher <method> <parameters> Decipher the message. Use 'steg-cli -h cipher' to get more information on available cipher.\n"
                          + "\n"
                          + "Other options:\n"
-                         + "-h, --help                         Show this help message.");
+                         + "  -h, --help                         Show this help message.");
     }
 
     private static void printCipherHelp() {
         System.out.println("Cipher argument usage: -c <method> <parameters>"
                          + "Cipher methods:"
-                         + "caesar <shift>      with shift an integer"
-                         + "rot13");
+                         + "  caesar <shift>      with shift an integer"
+                         + "  rot13");
     }
 
 }
